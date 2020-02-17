@@ -189,7 +189,7 @@ function renderResultsScreen() {
 //event handlers
 
 function handleStartClick() {
-  $("main").on("click", "#start", function(event) {
+  $(".quiz").on("click", "#start", function(event) {
     STORE.quizStarted = true;
     renderQuestionHtml();
   });
@@ -219,7 +219,7 @@ function handleAnswerSubmitted() {
       renderFeedbackCorrect();
     } else if (
       selected !== `${STORE.questions[STORE.questionNumber].correctAnswer}` &&
-      selelected !== undefined
+      selected !== undefined
     ) {
       renderFeedbackWrong();
     }
