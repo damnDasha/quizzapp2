@@ -8,8 +8,23 @@
 */
 
 * {
-  font-family: "Amatic SC";
-  text-align: center;
-  font-size: 24px;
-  background-color: #fff8fb;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: "Poiret One", cursive;
+}
+
+main {
+  background-image: url(https://imgur.com/HwBYbmR);
+}
+
+body {
+  text-align: left;
+  background-color: #feeaef;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: lighter;
 }

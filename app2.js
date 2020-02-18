@@ -59,8 +59,9 @@ const STORE = {
 function generateStartScreenHtml() {
   return `
   <div class="start-screen">
-    <p>This quiz will test your fashion knowledge.
-      When it is over you will be a fashion... monger!
+  <h2> Fashion Blogger Prep Course</h2>
+    <p>This prep course will prepare you for a "career" as a fashion blogger!
+      
     </p>
     <button type="button" id="start">Start Quiz</button>
   </div>
@@ -87,8 +88,8 @@ function generateQuestionHtml() {
   // what question are we on
   // STORE.questionNumber
   // how do we grab that question?
-  //let currentQuestion = STORE.questions[STORE.questionNumber];
-  //$("main").text(STORE.questionTitle);
+  let currentQuestion = STORE.questions[STORE.questionNumber];
+  $("main").text(STORE.question);
   return `
    
     <form id="question-form" class="question-form">
@@ -164,6 +165,21 @@ function generateFeedbackWrong() {
       <button type="submit">Next</button>
     </form>
   </div>`;
+}
+
+function render() {
+  let html = "";
+
+  if (STORE.quizStarted === false) {
+    $("main").html(generateStartScreenHtml());
+    return;
+  } else if (STORE.questionNumber < STORE.questions.length) {
+    html = generateQuestionNumberandScoreHtml();
+    html += generateQuestionHtml();
+    $("main").html(html);
+  } else {
+    $("main").html(generateResultsScreen());
+  }
 }
 
 function renderStartScreenHtml() {
